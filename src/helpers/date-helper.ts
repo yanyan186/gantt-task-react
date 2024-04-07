@@ -141,7 +141,7 @@ export const ganttDateRange = (
       newStartDate = startOfDate(newStartDate, "minute");
       newStartDate = addToDate(newStartDate, -1 * preStepsCount, "minute");
       newEndDate = startOfDate(newEndDate, "day");
-      newEndDate = addToDate(newEndDate, 1, "day");
+      newEndDate = addToDate(newEndDate, 6, "hour");
       break;
   }
   return [newStartDate, newEndDate];
