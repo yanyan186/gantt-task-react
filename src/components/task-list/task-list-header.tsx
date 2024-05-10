@@ -6,7 +6,29 @@ export const TaskListHeaderDefault: React.FC<{
   rowWidth: string;
   fontFamily: string;
   fontSize: string;
-}> = ({ headerHeight, fontFamily, fontSize, rowWidth }) => {
+  columnNames: [];
+}> = ({ headerHeight, fontFamily, fontSize, rowWidth, columnNames }) => {
+  const columnDom = (item: string) => {
+    return (
+      <>
+        <div
+          className={styles.ganttTable_Header}
+          style={{
+            height: headerHeight - 2,
+          }}
+        ></div>
+        <div
+          className={styles.ganttTable_HeaderItem}
+          style={{
+            minWidth: rowWidth,
+          }}
+        >
+          &nbsp;{item}
+        </div>
+      </>
+    )
+  }
+
   return (
     <div
       className={styles.ganttTable}
@@ -15,20 +37,11 @@ export const TaskListHeaderDefault: React.FC<{
         fontSize: fontSize,
       }}
     >
-      <div
-        className={styles.ganttTable_Header}
-        style={{
-          height: headerHeight - 2,
-        }}
-      >
-        <div
-          className={styles.ganttTable_HeaderItem}
-          style={{
-            minWidth: rowWidth,
-          }}
-        >
-          &nbsp;名称
-        </div>
+      {columnNames.map((item) => {
+        return columnDom(item)
+      })
+      }
+      {/*          
         <div
           className={styles.ganttTable_HeaderSeparator}
           style={{
@@ -58,8 +71,8 @@ export const TaskListHeaderDefault: React.FC<{
           }}
         >
           &nbsp;结束日期
-        </div>
-      </div>
+        </div> */}
     </div>
+    // </div >
   );
 };
