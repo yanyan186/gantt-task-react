@@ -6,28 +6,7 @@ export const TaskListHeaderDefault: React.FC<{
   rowWidth: string;
   fontFamily: string;
   fontSize: string;
-  columnNames: [];
-}> = ({ headerHeight, fontFamily, fontSize, rowWidth, columnNames }) => {
-  const columnDom = (item: string) => {
-    return (
-      <>
-        <div
-          className={styles.ganttTable_Header}
-          style={{
-            height: headerHeight - 2,
-          }}
-        ></div>
-        <div
-          className={styles.ganttTable_HeaderItem}
-          style={{
-            minWidth: rowWidth,
-          }}
-        >
-          &nbsp;{item}
-        </div>
-      </>
-    )
-  }
+}> = ({ headerHeight, fontFamily, fontSize, rowWidth }) => {
 
   return (
     <div
@@ -37,42 +16,35 @@ export const TaskListHeaderDefault: React.FC<{
         fontSize: fontSize,
       }}
     >
-      {columnNames.map((item) => {
-        return columnDom(item)
-      })
-      }
-      {/*          
-        <div
-          className={styles.ganttTable_HeaderSeparator}
-          style={{
-            height: headerHeight * 0.5,
-            marginTop: headerHeight * 0.2,
-          }}
-        />
-        <div
-          className={styles.ganttTable_HeaderItem}
-          style={{
-            minWidth: rowWidth,
-          }}
-        >
-          &nbsp;开始日期
-        </div>
-        <div
-          className={styles.ganttTable_HeaderSeparator}
-          style={{
-            height: headerHeight * 0.5,
-            marginTop: headerHeight * 0.25,
-          }}
-        />
-        <div
-          className={styles.ganttTable_HeaderItem}
-          style={{
-            minWidth: rowWidth,
-          }}
-        >
-          &nbsp;结束日期
-        </div> */}
-    </div>
-    // </div >
+      <div
+        className={styles.ganttTable_HeaderSeparator}
+        style={{
+          minWidth: rowWidth,
+          height: headerHeight * 0.5,
+          paddingTop: headerHeight * 0.25,
+          // marginTop: headerHeight * 0.2,
+        }}
+      >
+        &nbsp;设备编号
+      </div>
+      <div
+        className={styles.ganttTable_HeaderItem}
+        style={{
+          minWidth: rowWidth,
+        }}
+      >
+        &nbsp;设备名称
+      </div>
+      <div
+        className={styles.ganttTable_HeaderItem}
+        style={{
+          minWidth: rowWidth,
+          height: headerHeight * 0.5,
+          paddingTop: headerHeight * 0.25,
+        }}
+      >
+        &nbsp;状态
+      </div>
+    </div >
   );
 };
