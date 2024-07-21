@@ -452,7 +452,7 @@ export const Gantt: React.FunctionComponent<GanttProps> = ({
   return (
     <div>
       <div
-        className={styles.wrapper_new}
+        className={styles.wrapper}
         onKeyDown={handleKeyDown}
         tabIndex={0}
         ref={wrapperRef}
