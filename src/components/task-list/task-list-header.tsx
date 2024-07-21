@@ -25,7 +25,7 @@ export const TaskListHeaderDefault: React.FC<{
           // marginTop: headerHeight * 0.2,
         }}
       >
-        &nbsp;设备编号==
+        &nbsp;设备编号=
       </div>
       <div
         className={styles.ganttTable_HeaderItem}
