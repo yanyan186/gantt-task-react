@@ -35,7 +35,8 @@ export const TaskListHeaderDefault: React.FC<{
         className={styles.ganttTable_HeaderItem}
         style={{
           minWidth: rowWidth,
-          lineHeight: lHeight
+          lineHeight: lHeight,
+          borderRight: '1px solid rgb(196, 196, 196)'
         }}
       >
         &nbsp;设备名称
