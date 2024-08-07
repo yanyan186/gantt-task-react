@@ -105,7 +105,7 @@ export const TaskListTableDefault: React.FC<{
                   maxWidth: rowWidth,
                 }}
               >
-                &nbsp;{t.status}===
+                &nbsp;{t.status}
               </div>
             </div>
           );
